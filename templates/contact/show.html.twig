@@ -1,0 +1,51 @@
+{% extends "./base.html.twig" %}
+
+{% block body %}
+    <div class="sm:w-3/5 w-4/5 mx-auto">
+        <h1 class="pt-20 sm:text-5xl md:text-7xl text-4xl font-bold text-center">
+            {{ contact.name }}
+        </h1>
+
+        <div class="py-10 text-center">
+            <div class="inline-block sm:pt-1">
+                <h2 class="font-bold">
+                    Contact details
+                </h2>
+            </div>
+        </div>
+
+
+        <div>
+            <span>name : </span>
+                    <p class="text-xl py-6">
+            {{ contact.name }}
+            </p>
+        </div>
+
+        <div>
+            <span>Email address : </span>
+                    <p class="text-xl py-6">
+            {{ contact.email }}
+            </p>
+        </div>
+
+        <div>
+            <span>Phone number : </span>
+                    <p class="text-xl py-6">
+            {{ contact.phone }}
+            </p>
+        </div>
+
+        <a 
+            href="/contacts/edit/{{ contact.id }}"
+            class="bg-green-500 font-bold py-2 px-4 rounded transition-all hover:bg-green-300">
+            Edit contact
+        </a>
+
+        <a 
+            href="/contacts/delete/{{ contact.id }}"
+            class="bg-red-500 font-bold py-2 px-4 ml-6 rounded transition-all hover:bg-red-300">
+            Delete contact
+        </a>
+    </div>
+{% endblock %}
